@@ -5,8 +5,9 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
     <bean class="org.springframework.context.support.PropertySourcesPlaceholderConfigurer" p:location="connection.properties"/>
+    <bean class="org.sqlite.SQLiteDataSource" name="sqLiteDataSource"/>
     <bean id="connnectionXml"
           class="org.example.datasources.XMLSQLiteConnection"
           name="xmlsqLiteConnection"
-          c:login="${login}" c:password="${password}"/>
+          c:login="${login}" c:password="${password}" c:dataSource-ref="sqLiteDataSource"/>
 </beans>

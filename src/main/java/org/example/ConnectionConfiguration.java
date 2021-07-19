@@ -12,19 +12,19 @@ import org.sqlite.SQLiteDataSource;
 public class ConnectionConfiguration {
     @Bean
     public JavaConfigurationSQLiteConnection javaConfigurationSQLiteConnection(@Value("${login}") String login,
-                                                                               @Value("${password}") String password){
+                                                                               @Value("${password}") String password) {
         return new JavaConfigurationSQLiteConnection(login, password, sqLiteDataSource());
     }
 
     @Bean
     public JavaConfigurationSQLiteConnection javaConfigurationSQLiteConnectionOther(SQLiteDataSource sqLiteDataSource,
                                                                                     @Value("${login}") String login,
-                                                                                    @Value("${password}") String password){
+                                                                                    @Value("${password}") String password) {
         return new JavaConfigurationSQLiteConnection(login, password, sqLiteDataSource);
     }
 
     @Bean
-    public SQLiteDataSource sqLiteDataSource(){
+    public SQLiteDataSource sqLiteDataSource() {
         return new SQLiteDataSource(new SQLiteConfig());
     }
 }
