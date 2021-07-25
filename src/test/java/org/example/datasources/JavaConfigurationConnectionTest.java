@@ -1,5 +1,6 @@
 package org.example.datasources;
 
+import org.example.javaconfiguration.JavaConfigurationSQLiteConnection;
 import org.junit.jupiter.api.Test;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
@@ -9,7 +10,7 @@ class JavaConfigurationConnectionTest {
 
     @Test
     void javaConfigurationSQLiteConnection() {
-        final var context = new AnnotationConfigApplicationContext("org.example");
+        final var context = new AnnotationConfigApplicationContext("org.example.javaconfiguration");
         final var javaConfigurationSQLiteConnection
                 = context.getBean("javaConfigurationSQLiteConnection", JavaConfigurationSQLiteConnection.class);
         final var javaConfigurationSQLiteConnectionOther

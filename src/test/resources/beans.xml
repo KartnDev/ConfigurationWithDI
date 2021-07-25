@@ -7,7 +7,7 @@
     <bean class="org.springframework.context.support.PropertySourcesPlaceholderConfigurer" p:location="connection.properties"/>
     <bean class="org.sqlite.SQLiteDataSource" name="sqLiteDataSource"/>
     <bean id="connnectionXml"
-          class="org.example.datasources.XMLSQLiteConnection"
+          class="org.example.xml.XMLSQLiteConnection"
           name="xmlsqLiteConnection"
           c:login="${login}" c:password="${password}" c:dataSource-ref="sqLiteDataSource"/>
 </beans>

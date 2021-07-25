@@ -1,4 +1,4 @@
-package org.example.datasources;
+package org.example.annotation;
 
 import lombok.Getter;
 import lombok.SneakyThrows;
@@ -9,7 +9,7 @@ import org.sqlite.SQLiteDataSource;
 
 import javax.sql.DataSource;
 
-@Component("javaspring_AnnotationConfigurationSQLiteConnection")
+@Component
 @Getter
 public class AnnotationConfigurationSQLiteConnection {
     private final String login;
@@ -21,7 +21,6 @@ public class AnnotationConfigurationSQLiteConnection {
                                                    @Value("${password}") String password) {
         this.login = login;
         this.password = password;
-        //TODO We can configure also dataSource like ApplicationPropertiesPlaceholder
         dataSource = new SQLiteDataSource(new SQLiteConfig());
     }
 }

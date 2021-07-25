@@ -1,5 +1,6 @@
 package org.example.datasources;
 
+import org.example.xml.XMLSQLiteConnection;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.xml.XmlBeanDefinitionReader;
 import org.springframework.context.support.GenericApplicationContext;
@@ -15,7 +16,7 @@ class XMLSQLiteConnectionTest {
         new XmlBeanDefinitionReader(context).loadBeanDefinitions("beans.xml");
         context.refresh();
 
-        final var bean = context.getBean("xmlsqLiteConnection", XMLSQLiteConnection.class);
+        final var bean = context.getBean(XMLSQLiteConnection.class);
 
         assertNotNull(bean.getDataSource());
         assertEquals("app", bean.getLogin());
