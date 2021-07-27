@@ -6,7 +6,7 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class ApplicationPropertiesPlaceholder extends PropertySourcesPlaceholderConfigurer {
-    public ApplicationPropertiesPlaceholder(){
+    public ApplicationPropertiesPlaceholder() {
         setLocation(new ClassPathResource("connection.properties"));
     }
 }

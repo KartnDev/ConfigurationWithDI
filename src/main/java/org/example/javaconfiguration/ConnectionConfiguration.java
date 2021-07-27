@@ -25,13 +25,6 @@ public class ConnectionConfiguration {
     }
 
     @Bean
-    public JavaConfigurationSQLiteConnection javaConfigurationSQLiteConnectionOther(SQLiteDataSource sqLiteDataSource,
-                                                                                    @Value("${login}") String login,
-                                                                                    @Value("${password}") String password) {
-        return new JavaConfigurationSQLiteConnection(login, password, sqLiteDataSource);
-    }
-
-    @Bean
     public SQLiteDataSource sqLiteDataSource() {
         return new SQLiteDataSource(new SQLiteConfig());
     }
