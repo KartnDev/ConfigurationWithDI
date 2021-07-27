@@ -1,18 +1,14 @@
 package org.example.programmatic;
 
 import lombok.Getter;
+import lombok.RequiredArgsConstructor;
 
 import javax.sql.DataSource;
 
 @Getter
+@RequiredArgsConstructor
 public class ProgrammicConfigurationSQLiteConnection {
     private final String login;
     private final String password;
     private final DataSource dataSource;
-
-    public ProgrammicConfigurationSQLiteConnection(String login, String password, DataSource dataSource) {
-        this.login = login;
-        this.password = password;
-        this.dataSource = dataSource;
-    }
 }
